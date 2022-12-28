@@ -1,0 +1,23 @@
+<div
+  class="ui raised segment"
+  style="display: flex; justify-content: center; align-items: center"
+>
+  <div>
+    <h2 class="ui header">Car Factory</h2>
+    <form
+      [formGroup]="myForm"
+      (ngSubmit)="produceCar()"
+      class="ui form"
+      [class.error]="!myForm.valid && myForm.touched"
+    >
+      <div class="field" [class.error]="!name.valid && name.touched">
+        <input type="text" name="name" id="name" [formControl]="name" />
+      </div>
+      <BR />
+      <p style="margin-top: 30px">Output:{{ result }}</p>
+      <BR />
+      <BR />
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
